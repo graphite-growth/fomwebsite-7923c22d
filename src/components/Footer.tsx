@@ -33,6 +33,8 @@ const AnimatedFooterLogo = () => {
       <img
         src={FomIcon}
         alt="Future of Marketing"
+        width="598"
+        height="186"
         className="w-full select-none"
       />
       <motion.div
