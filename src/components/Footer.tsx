@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useRef, useState } from "react";
-const FomIcon = "/images/assets/FOM_Icon.svg";
+const FomIcon = "/images/assets/FOM_Icon.png";
 import { liquidEase } from "@/components/animations/PageLoadAnimation";
 import { useSubscribe } from "@/contexts/SubscribeContext";
 import { fomMaskStyles } from "@/lib/logoMask";

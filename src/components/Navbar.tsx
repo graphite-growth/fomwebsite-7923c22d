@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-const FomLogo = "/images/assets/FOM_Logo.svg";
+const FomLogo = "/images/assets/FOM_Logo.png";
 import { useSubscribe } from "@/contexts/SubscribeContext";
 
 import SubscribeButton from "@/components/SubscribeButton";
