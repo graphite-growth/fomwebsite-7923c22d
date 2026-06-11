@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-const FomLogo = "/images/assets/FOM_Logo.svg";
+const FomLogo = "/images/assets/New_Logo.png";
 import { useSubscribe } from "@/contexts/SubscribeContext";
 
 import SubscribeButton from "@/components/SubscribeButton";
