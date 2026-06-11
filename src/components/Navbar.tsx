@@ -3,10 +3,9 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import FomLogoImg from "@/public/images/assets/FOM_Logo.svg";
+const FomLogo = "/images/assets/FOM_Logo.svg";
 import { useSubscribe } from "@/contexts/SubscribeContext";
 
 import SubscribeButton from "@/components/SubscribeButton";
@@ -25,12 +24,10 @@ const AnimatedLogo = ({ className }: { className?: string }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Base static logo */}
-      <Image
-        src={FomLogoImg}
+      <img
+        src={FomLogo}
         alt="Future of Marketing"
-        fill
-        className="object-contain"
-        priority
+        className="h-full w-auto"
       />
       
       {/* Animated gradient overlay - masked by the shapes */}
