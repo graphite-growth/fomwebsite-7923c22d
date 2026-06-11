@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useRef, useState } from "react";
@@ -31,12 +30,7 @@ const AnimatedFooterLogo = () => {
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
     >
-      <Image
-        src={FomIcon}
-        alt="Future of Marketing"
-        fill
-        className="object-contain select-none"
-      />
+      <img src={FomIcon} alt="Future of Marketing" className="w-full select-none" />
       <motion.div
         className="absolute inset-0 w-full h-full pointer-events-none"
         style={{

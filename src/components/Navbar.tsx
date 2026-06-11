@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -28,12 +27,7 @@ const AnimatedLogo = ({ className }: { className?: string }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Base static logo */}
-      <Image
-        src={FomLogo}
-        alt="Future of Marketing"
-        fill
-        className="object-contain"
-      />
+      <img src={FomLogo} alt="Future of Marketing" className="h-full w-auto" />
 
       {/* Animated gradient overlay - masked by the shapes */}
       <motion.div
