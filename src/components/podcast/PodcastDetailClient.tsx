@@ -41,7 +41,7 @@ export default function PodcastDetailClient({
   const thumbnailUrl = getYouTubeThumbnail(episode.youtubeUrl);
 
   const otherEpisodes = getPublishedEpisodes()
-    .filter((ep) => ep.slug !== slug)
+    .filter((ep) => ep.slug !== slug && ep.slug !== "the-future-of-marketing")
     .slice(0, 3);
 
   const handlePlayFromBar = () => {

@@ -164,7 +164,7 @@ This episode is a practical blueprint for CMOs and marketing leaders who want AI
       "https://podcasts.apple.com/us/podcast/why-the-best-cmos-think-like-operators-not-marketers/id1876216633?i=1000750167406",
     duration: "52 min",
     publishedDate: "Jan 15, 2026",
-    themes: ["AI", "Work / Culture"],
+    themes: ["AI"],
     detailTags: ["AI Strategy", "Automation", "Leadership", "AEO", "Culture"],
     comingSoon: false,
     linkedInUrl: "https://linkedin.com/in/meageneisenberg",
@@ -251,7 +251,7 @@ This episode is a blueprint for marketing leaders navigating the shift from AI a
     spotifyUrl: "https://open.spotify.com/episode/11wp5t22MdBePMEHfwe89S",
     duration: "55 min",
     publishedDate: "Feb 26, 2026",
-    themes: ["Brand", "AI", "Measurement"],
+    themes: ["Brand", "AI"],
     detailTags: [
       "Brand Trust",
       "AI Adoption",
@@ -292,7 +292,7 @@ This episode is a blueprint for marketing leaders navigating the shift from AI a
     appleUrl: "https://apple.co/4l7QPM6",
     duration: "54 min",
     publishedDate: "Mar 5, 2026",
-    themes: ["AI", "GTM", "Measurement"],
+    themes: ["AI", "GTM"],
     detailTags: [
       "Developer-First",
       "AI Adoption",
@@ -334,7 +334,7 @@ This episode is a blueprint for marketing leaders navigating the shift from AI a
       "https://podcasts.apple.com/us/podcast/ai-alignment-and-the-death-of-single-touch/id1876216633?i=1000754858206",
     duration: "50 min",
     publishedDate: "Mar 12, 2026",
-    themes: ["Brand", "AI", "Community"],
+    themes: ["Brand", "AI"],
     detailTags: [
       "Attribution & Measurement",
       "Storytelling",
@@ -470,7 +470,7 @@ Looking ahead, Lindsey believes the future marketing organization will be define
     appleUrl: "https://bit.ly/4vAEGEh",
     duration: "37:09",
     publishedDate: "Apr 16, 2026",
-    themes: ["AI", "SMB", "GTM"],
+    themes: ["AI", "GTM"],
     detailTags: [
       "Customer Obsession",
       "SMB Marketing",
@@ -521,7 +521,7 @@ Ultimately, Idan's perspective is pragmatic: AI can accelerate execution and ana
     appleUrl: "https://bit.ly/4t1AcEe",
     duration: "53:34",
     publishedDate: "Apr 28, 2026",
-    themes: ["AI", "GTM", "Data"],
+    themes: ["AI", "GTM"],
     detailTags: [
       "Proprietary Data",
       "Outbound",
@@ -651,24 +651,6 @@ The takeaway is clear: in a market defined by rapid change, the winners will be 
     hosts: [podcastHosts[2], podcastHosts[1]], // Ethan Smith, Camille Ricketts
   },
   {
-    id: 10,
-    slug: "katrina-wong",
-    name: "Katrina Wong",
-    title: "Chief Marketing Officer",
-    company: "New Relic",
-    companyDomain: "newrelic.com",
-    overview: "",
-    bio: "",
-    fullDescription: "",
-    topics: [],
-    chapters: [],
-    youtubeUrl: "",
-    spotifyUrl: "",
-    duration: "",
-    publishedDate: "Coming Soon",
-    comingSoon: true,
-  },
-  {
     id: 12,
     slug: "alina-vandenberghe",
     name: "Alina Vandenberghe",
@@ -793,5 +775,39 @@ Ultimately, this conversation reframes the role of marketing teams: not as execu
     pullQuote:
       "If we can automate away all of the tasks that make us less human and really bring to the fore all of the things that make us more human, that enables us to scale our empathy.",
     hosts: [podcastHosts[0], podcastHosts[2]], // Mada Seghete, Ethan Smith
+  },
+  {
+    id: 15,
+    slug: "morgane-palomares",
+    name: "Morgane Palomares",
+    title: "VP of Marketing",
+    company: "Braintrust",
+    companyDomain: "braintrust.com",
+    overview: "Building Credibility, Speed, and Leverage Inside Technical Companies",
+    bio: "is VP of Marketing at Braintrust, where she leads brand, demand, and developer marketing. She is known for using data-driven listening — Reddit scraping, Gong call analysis, and AI transcript reviews — to diagnose market reality fast and build marketing programs that earn trust inside technical organizations.",
+    fullDescription:
+      "In this episode of Future of Marketing, hosts Camille Ricketts and Mada Seghete sit down with Morgane Palomares, VP of Marketing at Braintrust, to unpack how marketing leaders can build credibility, speed, and leverage inside technical companies. Morgane shares how she used Reddit scraping, Gong calls, AI transcript analysis, and monthly executive readouts to shape her first 90 days at Braintrust. She also breaks down why Braintrust prioritized brand before education, how AI agents are changing PMM and field marketing workflows, and why developer marketing teams should move fast without lowering the quality bar.",
+    topics: [
+      "Why the first 90 days as a marketing leader should start during the interview process",
+      "How Morgane used Reddit feedback, Gong calls, and AI transcript analysis to diagnose Braintrust's market and customer reality faster",
+      "Why monthly executive readouts helped build trust by making observations, gaps, and tradeoffs explicit",
+      "How to decide whether a technical company needs education, brand visibility, demand creation, or executive-level messaging first",
+      "How San Francisco transit shelters, bus wraps, posters, a 500-person user conference, a Series B announcement, a new brand, and a new website worked together as one market signal",
+      "Why product marketing may become one of the highest-leverage AI-enabled functions in technical B2B companies",
+      "How to earn credibility with engineering teams by shaping technical insight without slowing down product launches",
+    ],
+    themes: ["AI", "Brand"],
+    detailTags: ["Developer Marketing", "Brand Strategy", "AI Strategy", "B2B"],
+    chapters: [],
+    youtubeUrl: "https://youtu.be/2EgBtOOj7SA",
+    spotifyUrl: "https://tinyurl.com/nzcj4yjx",
+    appleUrl: "https://tinyurl.com/45wk3j46",
+    duration: "51 min",
+    publishedDate: "Jun 17, 2026",
+    comingSoon: false,
+    linkedInUrl: "https://www.linkedin.com/in/morganepalomares/",
+    pullQuote:
+      "I never slow down a product launch unless you fundamentally think something is wrong, and then you need to come tell me.",
+    hosts: [podcastHosts[1], podcastHosts[0]], // Camille Ricketts, Mada Seghete
   },
 ];
