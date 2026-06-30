@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "format": "biome format --write .",
     "format:check": "biome format .",
-    "biome:lint": "biome lint ."
+    "biome:lint": "biome lint .",
+    "check:seo": "node scripts/check-episode-seo.mjs"
   },
   "dependencies": {
     "@next/third-parties": "16.2.5",

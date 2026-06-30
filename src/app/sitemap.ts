@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((ep) => !ep.comingSoon)
     .map((ep) => ({
       url: `${SITE_URL}/podcast/${ep.slug}`,
-      lastModified: today,
+      lastModified: ep.publishedDate ? new Date(ep.publishedDate) : today,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     }));
