@@ -11,7 +11,8 @@
     "format": "biome format --write .",
     "format:check": "biome format .",
     "biome:lint": "biome lint .",
-    "check:seo": "node scripts/check-episode-seo.mjs"
+    "check:seo": "node scripts/check-episode-seo.mjs",
+    "make:images": "node scripts/make-episode-images.mjs"
   },
   "dependencies": {
     "@next/third-parties": "16.2.5",
@@ -33,6 +34,7 @@
     "eslint": "9",
     "eslint-config-next": "16.2.5",
     "postcss": "8.5.14",
+    "sharp": "^0.35.3",
     "tailwindcss": "3.4.19",
     "typescript": "5"
   }

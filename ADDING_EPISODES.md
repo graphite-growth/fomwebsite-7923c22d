@@ -14,16 +14,33 @@ entry. You don't write any new page.
 
 ## The 4 steps
 
-### 1. Add three images
+### 1. Generate the three images — one command
 
-Name every file after the guest **slug** (lowercase, hyphenated, e.g.
-`morgane-palomares`):
+Give the script **one** high-res guest photo (landscape or portrait, ideally
+≥1500px on the long side) and the slug; it produces all three, correctly sized
+and **automatically optimized** — no manual cropping or compression:
 
-| File | Location | Used for | Recommended size |
+```bash
+npm run make:images <slug> <path-to-photo>
+# e.g.
+npm run make:images scott-holden ~/Downloads/scott.jpg
+```
+
+| Output file | Location | Size | Used for |
 |---|---|---|---|
-| `guest-<slug>.jpg` | `public/images/assets/` | Square photo on episode cards / lists | ~800×800, square |
-| `guest-<slug>-cover.jpg` | `public/images/assets/` | Wide cover / poster on the detail page | ~1600×900, 16:9 |
-| `og-<slug>.jpg` | `public/images/` | Social share card (LinkedIn/X/iMessage) | **1200×630** (do not skip — this is the SEO share image) |
+| `guest-<slug>.jpg` | `public/images/assets/` | 1200×1500 | Episode cards / lists / sidebar |
+| `guest-<slug>-cover.jpg` | `public/images/assets/` | 1600×900 | Detail-page cover |
+| `og-<slug>.jpg` | `public/images/` | 1200×630 | Social share — **photo + white FOM logo composited top-right** |
+
+- Everything runs through **mozjpeg (quality 80)**, so outputs are always small
+  (~40–250 KB) regardless of the source size. You never need to compress by hand
+  — the oversized-image problem is solved at the source.
+- The OG logo lockup lives at `public/images/assets/fom-og-logo.svg`; the script
+  rasterizes and overlays it. If you'd rather use a hand-designed OG, just drop
+  your own `og-<slug>.jpg` into `public/images/` after running.
+- Face framing is a center-crop. If a guest's face sits off-center and gets
+  cropped oddly, hand-crop that one file (still run it through the script first
+  for sizing/optimization).
 
 ### 2. Wire the images up — `src/lib/episodeImages.ts`
 

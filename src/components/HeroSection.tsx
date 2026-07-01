@@ -322,7 +322,7 @@ const HeroSection = () => {
                             src={teaserBg}
                             alt=""
                             fill
-                            className="object-contain object-bottom"
+                            className="object-cover object-bottom"
                           />
                           {/* Gradient mask over image */}
                           <div className="absolute inset-0 bg-[linear-gradient(to_bottom,hsl(var(--background))_0%,hsl(var(--background))_40%,hsl(var(--background)/0.8)_60%,hsl(var(--background)/0.3)_80%,transparent_100%)]" />
@@ -481,7 +481,7 @@ const HeroSection = () => {
                             src={teaserBg}
                             alt=""
                             fill
-                            className="object-contain object-bottom"
+                            className="object-cover object-bottom"
                           />
                           {/* Gradient mask over image */}
                           <div className="absolute inset-0 bg-[linear-gradient(to_bottom,hsl(var(--background))_0%,hsl(var(--background))_40%,hsl(var(--background)/0.8)_60%,hsl(var(--background)/0.3)_80%,transparent_100%)]" />

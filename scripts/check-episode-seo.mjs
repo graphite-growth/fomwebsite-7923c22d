@@ -20,8 +20,14 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const dataSrc = fs.readFileSync(path.join(root, "src/lib/podcastData.ts"), "utf8");
-const imgSrc = fs.readFileSync(path.join(root, "src/lib/episodeImages.ts"), "utf8");
+const dataSrc = fs.readFileSync(
+  path.join(root, "src/lib/podcastData.ts"),
+  "utf8"
+);
+const imgSrc = fs.readFileSync(
+  path.join(root, "src/lib/episodeImages.ts"),
+  "utf8"
+);
 
 const MAX_TITLE = 60; // mirrors buildEpisodeSeo() in src/lib/episodeUtils.ts
 
@@ -33,7 +39,9 @@ function field(slug, name) {
   return dataSrc.match(re)?.[1] ?? null;
 }
 function isComingSoon(slug) {
-  const re = new RegExp(`slug:\\s*"${slug}"[\\s\\S]*?\\bcomingSoon:\\s*(true|false)`);
+  const re = new RegExp(
+    `slug:\\s*"${slug}"[\\s\\S]*?\\bcomingSoon:\\s*(true|false)`
+  );
   return dataSrc.match(re)?.[1] === "true";
 }
 // Extract a brace-balanced map body so template literals like `?${OG_VERSION}`
@@ -45,7 +53,8 @@ function mapBody(name) {
   let depth = 0;
   for (let i = open; i < imgSrc.length; i++) {
     if (imgSrc[i] === "{") depth++;
-    else if (imgSrc[i] === "}" && --depth === 0) return imgSrc.slice(open, i + 1);
+    else if (imgSrc[i] === "}" && --depth === 0)
+      return imgSrc.slice(open, i + 1);
   }
   return imgSrc.slice(open);
 }
@@ -64,9 +73,9 @@ const warnings = [];
 for (const slug of slugs) {
   const soon = isComingSoon(slug);
   const checks = {
-    "EPISODE_IMAGES": epMap.includes(`"${slug}":`),
-    "POSTER_IMAGES": posterMap.includes(`"${slug}":`),
-    "OG_IMAGES": ogMap.includes(`"${slug}":`),
+    EPISODE_IMAGES: epMap.includes(`"${slug}":`),
+    POSTER_IMAGES: posterMap.includes(`"${slug}":`),
+    OG_IMAGES: ogMap.includes(`"${slug}":`),
     "og image file": ogFileExists(slug),
   };
   // publishedDate must be parseable for live episodes (RSS sort + JSON-LD)
@@ -83,20 +92,24 @@ for (const slug of slugs) {
   const overview = field(slug, "overview") ?? "";
   const titleLen = `${name}: ${overview} | FOM Podcast`.length;
   if (!soon && titleLen > MAX_TITLE) {
-    warnings.push(`${slug}: SEO title is ${titleLen} chars → auto-truncated to ${MAX_TITLE}. Tighten "overview" to control what shows.`);
+    warnings.push(
+      `${slug}: SEO title is ${titleLen} chars → auto-truncated to ${MAX_TITLE}. Tighten "overview" to control what shows.`
+    );
   }
 }
 
 if (warnings.length) {
   console.log("\nNotes (not failures):");
-  for (const w of warnings) console.log("  • " + w);
+  for (const w of warnings) console.log(`  • ${w}`);
 }
 
 if (gaps.length) {
   console.error(`\n❌ SEO gaps found (${gaps.length}):`);
-  for (const g of gaps) console.error("  • " + g);
+  for (const g of gaps) console.error(`  • ${g}`);
   console.error("\nSee ADDING_EPISODES.md for how to fix each.");
   process.exit(1);
 }
 
-console.log(`\n✅ All ${slugs.length} episodes are SEO-complete (image maps, OG files, dates).`);
+console.log(
+  `\n✅ All ${slugs.length} episodes are SEO-complete (image maps, OG files, dates).`
+);

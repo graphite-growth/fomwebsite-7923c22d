@@ -783,7 +783,8 @@ Ultimately, this conversation reframes the role of marketing teams: not as execu
     title: "VP of Marketing",
     company: "Braintrust",
     companyDomain: "braintrust.com",
-    overview: "Building Credibility, Speed, and Leverage Inside Technical Companies",
+    overview:
+      "Building Credibility, Speed, and Leverage Inside Technical Companies",
     bio: "is VP of Marketing at Braintrust, where she leads brand, demand, and developer marketing. She is known for using data-driven listening — Reddit scraping, Gong call analysis, and AI transcript reviews — to diagnose market reality fast and build marketing programs that earn trust inside technical organizations.",
     fullDescription:
       "In this episode of Future of Marketing, hosts Camille Ricketts and Mada Seghete sit down with Morgane Palomares, VP of Marketing at Braintrust, to unpack how marketing leaders can build credibility, speed, and leverage inside technical companies. Morgane shares how she used Reddit scraping, Gong calls, AI transcript analysis, and monthly executive readouts to shape her first 90 days at Braintrust. She also breaks down why Braintrust prioritized brand before education, how AI agents are changing PMM and field marketing workflows, and why developer marketing teams should move fast without lowering the quality bar.",
@@ -809,5 +810,63 @@ Ultimately, this conversation reframes the role of marketing teams: not as execu
     pullQuote:
       "I never slow down a product launch unless you fundamentally think something is wrong, and then you need to come tell me.",
     hosts: [podcastHosts[1], podcastHosts[0]], // Camille Ricketts, Mada Seghete
+  },
+  {
+    id: 16,
+    slug: "scott-holden",
+    name: "Scott Holden",
+    title: "CMO",
+    company: "Vanta",
+    companyDomain: "vanta.com",
+    overview: "Building a Lean, AI-Era Marketing Team",
+    bio: "is CMO at Vanta, where he leads marketing as the company moves upmarket from SOC 2 into broader compliance, risk, trust centers, vendor questionnaires, and privacy. He previously helped scale ThoughtSpot from zero to $150M and doubled spend efficiency in the startup segment at Brex.",
+    fullDescription:
+      "In this episode of Future of Marketing, hosts Mada Seghete and Ethan Smith sit down with Scott Holden, CMO at Vanta, to unpack how marketing changes when AI accelerates output, weakens old playbooks, and makes authenticity harder to fake. Scott shares why he believes “expertise is dead,” how Vanta is moving upmarket from SOC 2 into broader compliance, risk, trust centers, vendor questionnaires, and privacy, and why the company’s “compliance” campaign used buyer pain, humor, AEO, LinkedIn, and AI-mined Gong insights to reach senior CISOs. He also explains why brand can act like performance spend, how AEO requires repeated message consensus across trusted sources, and why the modern marketing team needs product marketers, systems architects, and creator-style operators.",
+    topics: [
+      "Why marketing is moving toward human authenticity as AI-generated content floods every channel",
+      "Why old CMO playbooks are no longer enough, and why reinvention now needs to happen weekly or daily",
+      "Why brand spend can behave like performance spend when the product solves an urgent, transactional pain",
+      "How Vanta used AI to mine hundreds of Gong calls and identify “audit hell” as the insight behind its enterprise compliance campaign",
+      "How Scott thinks about AEO as a strategic discipline as AI tools increasingly shape what buyers discover",
+      "Why Scott would build a 10-person marketing team around three profiles: product marketer, systems architect, and influencer-style creator",
+    ],
+    themes: ["AI", "Brand"],
+    detailTags: [
+      "Brand Strategy",
+      "Answer Engine Optimization",
+      "Marketing Leadership",
+      "B2B SaaS",
+    ],
+    chapters: [
+      { time: "0:00", title: "Intro" },
+      {
+        time: "8:08",
+        title: "Building Enterprise Brand Campaigns That Break Through",
+      },
+      { time: "17:37", title: "Finding the Right Message and Winning in AEO" },
+      {
+        time: "26:54",
+        title: "LinkedIn Thought Leadership and Authentic Distribution",
+      },
+      {
+        time: "33:32",
+        title:
+          "The Future Marketing Team: Architects, Influencers, and Systems Thinkers",
+      },
+      {
+        time: "45:17",
+        title: "AI Agents, Creative Workflows, and Designing with Taste",
+      },
+    ],
+    youtubeUrl: "https://youtu.be/mQOezCVDdXw",
+    spotifyUrl: "https://bit.ly/4eQusIj",
+    appleUrl: "https://apple.co/4fcaetY",
+    duration: "60 min",
+    publishedDate: "Jun 30, 2026",
+    comingSoon: false,
+    linkedInUrl: "https://www.linkedin.com/in/scottiholden/",
+    pullQuote:
+      "Expertise is dead — not because experience stopped mattering, but because the old playbooks expire faster than most leaders can admit.",
+    hosts: [podcastHosts[0], podcastHosts[2]], // Mada Seghete, Ethan Smith
   },
 ];
