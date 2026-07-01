@@ -30,7 +30,11 @@ const AnimatedFooterLogo = () => {
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
     >
-      <img src={FomIcon} alt="Future of Marketing" className="w-full select-none" />
+      <img
+        src={FomIcon}
+        alt="Future of Marketing"
+        className="w-full select-none"
+      />
       <motion.div
         className="absolute inset-0 w-full h-full pointer-events-none"
         style={{

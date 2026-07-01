@@ -1,7 +1,6 @@
 "use client";
 
 import type { PodcastEpisode } from "@/lib/podcastData";
-import { AnimatePresence, motion } from "framer-motion";
 import { Bell } from "lucide-react";
 
 const getUpcomingCTA = () => "Get Notified";
@@ -23,7 +22,6 @@ const EpisodeCardContent = ({
   isUpcoming = false,
   showOverview = true,
   compact = false,
-  isHovered = false,
 }: EpisodeCardContentProps) => {
   const isIntro = episode.slug === "the-future-of-marketing";
   const textSize = compact
@@ -39,7 +37,7 @@ const EpisodeCardContent = ({
   return (
     <div className="card-content-bottom card-padding-lg z-[3]">
       {/* Default state: Name + Title/Company */}
-      <div className="md:group-hover:opacity-0 transition-opacity duration-700 ease-smooth">
+      <div className="md:group-hover:opacity-0 transition-opacity duration-200 ease-smooth">
         <h3
           className={`font-display ${textSize} text-white leading-[0.95] tracking-normal`}
         >
@@ -68,38 +66,14 @@ const EpisodeCardContent = ({
         )}
       </div>
 
-      {/* Hover state: Overview title morphs in */}
+      {/* Hover state: Overview fades in on hover.
+          CSS group-hover driven (not JS) so it fires on any real hover
+          without depending on an isHovered/isMobile state. */}
       {!isUpcoming && showOverview && episode.overview && (
         <div className="hidden md:block absolute bottom-0 left-0 right-0 card-padding-lg">
-          <AnimatePresence>
-            {isHovered && (
-              <motion.p
-                className="font-display text-xl sm:text-2xl lg:text-2xl text-white leading-[1.15] tracking-normal font-medium"
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: {
-                    opacity: 1,
-                    transition: { staggerChildren: 0.02, delayChildren: 0.15 },
-                  },
-                }}
-              >
-                {episode.overview.split("").map((char, i) => (
-                  <motion.span
-                    key={i}
-                    variants={{
-                      hidden: { opacity: 0 },
-                      visible: { opacity: 1 },
-                    }}
-                  >
-                    {char}
-                  </motion.span>
-                ))}
-              </motion.p>
-            )}
-          </AnimatePresence>
+          <p className="font-display text-xl sm:text-2xl lg:text-2xl text-white leading-[1.15] tracking-normal font-medium opacity-0 translate-y-2 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-200 ease-[cubic-bezier(0.33,1,0.68,1)]">
+            {episode.overview}
+          </p>
         </div>
       )}
 
