@@ -78,9 +78,15 @@ async function run() {
     .toFile(path.join(images, `og-${slug}.jpg`));
 
   console.log(`✓ Generated images for "${slug}":`);
-  console.log(`  public/images/assets/guest-${slug}.jpg        (1200×1500 card)`);
-  console.log(`  public/images/assets/guest-${slug}-cover.jpg  (1600×900 cover)`);
-  console.log(`  public/images/og-${slug}.jpg                  (1200×630 OG + logo)`);
+  console.log(
+    `  public/images/assets/guest-${slug}.jpg        (1200×1500 card)`
+  );
+  console.log(
+    `  public/images/assets/guest-${slug}-cover.jpg  (1600×900 cover)`
+  );
+  console.log(
+    `  public/images/og-${slug}.jpg                  (1200×630 OG + logo)`
+  );
 }
 
 run().catch((err) => {
