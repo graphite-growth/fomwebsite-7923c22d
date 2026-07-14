@@ -2,6 +2,7 @@
 
 import Footer from "@/components/Footer";
 import ListenSubscribeCards from "@/components/ListenSubscribeCards";
+import AboutTheHosts from "@/components/podcast/AboutTheHosts";
 import ComingSoonHeroCard from "@/components/podcast/ComingSoonHeroCard";
 import DetailVerticalText from "@/components/podcast/DetailVerticalText";
 import EpisodeGuestCard from "@/components/podcast/EpisodeGuestCard";
@@ -149,6 +150,12 @@ const ComingSoonEpisode = ({
               </FadeInSection>
             )}
 
+            {episode.hosts && episode.hosts.length > 0 && (
+              <FadeInSection delay={0.55}>
+                <AboutTheHosts hosts={episode.hosts} />
+              </FadeInSection>
+            )}
+
             {/* Guest & Hosts - Mobile only */}
             <div className="lg:hidden space-y-4">
               <EpisodeGuestCard
@@ -158,7 +165,7 @@ const ComingSoonEpisode = ({
                 companyDomain={episode.companyDomain}
                 linkedInUrl={episode.linkedInUrl}
               />
-              <EpisodeHostsCard />
+              <EpisodeHostsCard episodeHosts={episode.hosts} />
             </div>
           </div>
 
@@ -174,7 +181,7 @@ const ComingSoonEpisode = ({
               companyDomain={episode.companyDomain}
               linkedInUrl={episode.linkedInUrl}
             />
-            <EpisodeHostsCard />
+            <EpisodeHostsCard episodeHosts={episode.hosts} />
           </FadeInSection>
         </div>
 
