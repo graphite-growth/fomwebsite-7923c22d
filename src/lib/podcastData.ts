@@ -869,4 +869,57 @@ Ultimately, this conversation reframes the role of marketing teams: not as execu
       "Expertise is dead — not because experience stopped mattering, but because the old playbooks expire faster than most leaders can admit.",
     hosts: [podcastHosts[0], podcastHosts[2]], // Mada Seghete, Ethan Smith
   },
+  {
+    id: 17,
+    slug: "jonathan-kvarfordt",
+    name: "Jonathan Kvarfordt",
+    title: "VP of Marketing",
+    company: "1mind",
+    companyDomain: "1mind.com",
+    overview: "The Four Pillars That Build Demand From Zero Brand Awareness",
+    bio: "is VP of Marketing at 1mind, where he works at the intersection of AI, GTM, buyer experience, and revenue strategy. He previously built AI-led GTM motions at Momentum focused on trust, community, valuable content, and human-first pipeline generation.",
+    fullDescription:
+      "In this episode of Future of Marketing, hosts Mada Seghete and Ethan Smith sit down with Jonathan Kvarfordt, VP of Marketing at 1mind, to unpack how AI is changing pipeline generation, buyer coverage, and the structure of GTM teams. Jonathan argues that most teams are using AI too narrowly by trying to make old workflows faster, cheaper, and easier, especially around meeting booking. Instead, he makes the case for using AI to create better buyer experiences, answer deeper product questions, support solutioning, and move buyers further through the decision process before a human gets involved. He also shares how human effort, customer amplification, trusted communities, valuable content, AEO, and AI-powered analysis shaped his GTM approach at Momentum and now at 1mind.",
+    topics: [
+      "Why AI shouldn't just make old GTM motions cheaper — the bigger opportunity is doing something different across the buyer journey",
+      "Why the future of pipeline is still deeply human, since generic AI outreach gets ignored while effort, trust, and community cut through",
+      "How AI can cover more of the buying process than most teams expect — not just meetings booked, but education, qualification, and solutioning",
+      "Why optimizing for meetings booked is still a seller-first model, when the real goal is a more helpful buying experience",
+      "How Jonathan used four pillars to build trust at Momentum: customer amplification, trusted communities, valuable content, and surround-sound visibility",
+      "Why a 200-prompt GTM library Jonathan personally wrote generated more pipeline than anything else that year",
+    ],
+    themes: ["AI", "GTM"],
+    detailTags: [
+      "Demand Generation",
+      "Answer Engine Optimization",
+      "GTM Strategy",
+      "B2B SaaS",
+    ],
+    chapters: [
+      { time: "0:00", title: "Intro" },
+      { time: "1:41", title: "Reframing AI From SDR To Solution Engineer" },
+      { time: "3:58", title: "How AI Changes Pipeline Generation" },
+      { time: "8:33", title: "The Four Pillars Of AI-Era Demand Creation" },
+      { time: "12:40", title: "Where AI Speeds Up Human-Led Marketing" },
+      { time: "15:51", title: "Using AI To Expand Buyer Coverage" },
+      { time: "20:29", title: "What Human-To-AI Conversations Reveal" },
+      { time: "26:03", title: "Why GTM Engineering Needs Business Impact" },
+      {
+        time: "30:08",
+        title: "Reimagining GTM Teams Around AI Intelligence",
+      },
+    ],
+    youtubeUrl: "https://youtu.be/ho7qJY6E2Rw",
+    spotifyUrl: "https://bit.ly/4fb3ACX",
+    appleUrl: "https://apple.co/4fghIuK",
+    duration: "43 min",
+    publishedDate: "Jul 14, 2026",
+    // TODO(episode-17): guest photo is still the generic placeholder — swap in
+    // Jonathan's real photo via `npm run make:images jonathan-kvarfordt <path>`
+    comingSoon: false,
+    linkedInUrl: "https://www.linkedin.com/in/jmkmba/",
+    pullQuote:
+      "Most teams are trying to do what they did before, just better, faster, and easier. That's why AI's goal is to book meetings. And the question is, is that all AI can do?",
+    hosts: [podcastHosts[0], podcastHosts[2]], // Mada Seghete, Ethan Smith
+  },
 ];
