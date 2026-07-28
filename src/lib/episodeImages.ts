@@ -39,6 +39,8 @@ const guestScott = "/images/assets/guest-scott-holden.jpg";
 const scottCover = "/images/assets/guest-scott-holden-cover.jpg";
 const guestJonathan = "/images/assets/guest-jonathan-kvarfordt.jpg";
 const jonathanCover = "/images/assets/guest-jonathan-kvarfordt-cover.jpg";
+const guestKelly = "/images/assets/guest-kelly-hopping-v2.jpg";
+const kellyCover = "/images/assets/guest-kelly-hopping-cover-v2.jpg";
 
 export const EPISODE_IMAGES: Record<string, string> = {
   "the-future-of-marketing": hostMada,
@@ -59,6 +61,7 @@ export const EPISODE_IMAGES: Record<string, string> = {
   "morgane-palomares": guestMorgane,
   "scott-holden": guestScott,
   "jonathan-kvarfordt": guestJonathan,
+  "kelly-hopping": guestKelly,
 };
 
 export const POSTER_IMAGES: Record<string, string> = {
@@ -79,6 +82,7 @@ export const POSTER_IMAGES: Record<string, string> = {
   "morgane-palomares": morganeCover,
   "scott-holden": scottCover,
   "jonathan-kvarfordt": jonathanCover,
+  "kelly-hopping": kellyCover,
 };
 
 const OG_VERSION = "v5";
@@ -102,6 +106,7 @@ export const OG_IMAGES: Record<string, string> = {
   "morgane-palomares": `/images/og-morgane-palomares.jpg?${OG_VERSION}`,
   "scott-holden": `/images/og-scott-holden.jpg?${OG_VERSION}`,
   "jonathan-kvarfordt": `/images/og-jonathan-kvarfordt.jpg?${OG_VERSION}`,
+  "kelly-hopping": `/images/og-kelly-hopping.jpg?${OG_VERSION}`,
 };
 
 export const HOST_IMAGES = [hostMada, hostEthan, hostCamille];
