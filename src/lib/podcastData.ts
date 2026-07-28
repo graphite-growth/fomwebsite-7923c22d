@@ -922,4 +922,55 @@ Ultimately, this conversation reframes the role of marketing teams: not as execu
       "Most teams are trying to do what they did before, just better, faster, and easier. That's why AI's goal is to book meetings. And the question is, is that all AI can do?",
     hosts: [podcastHosts[0], podcastHosts[2]], // Mada Seghete, Ethan Smith
   },
+  {
+    id: 18,
+    slug: "kelly-hopping",
+    name: "Kelly Hopping",
+    title: "CMO",
+    company: "6sense",
+    companyDomain: "6sense.com",
+    overview: "Rethinking Brand, Multi-Touch Attribution, and Marketing Careers in the AI Era",
+    bio: "is CMO at 6sense, where she leads marketing for a GTM intelligence platform helping B2B revenue teams identify which accounts are actively researching and in market before they fill out a form or speak to sales.",
+    fullDescription:
+      "In this episode of Future of Marketing, hosts Mada Seghete and Ethan Smith sit down with Kelly Hopping, CMO at 6sense, to unpack how AI is changing the way marketing teams are built, measured, and managed. Kelly explains why she no longer backfills roles one-for-one, how agents are shifting manual execution work, and why modern marketing teams need more senior strategic thinkers, editors, prompt engineers, and customer journey owners. She also shares how 6sense uses BDRs, AI email, event follow-up, multi-touch attribution, paid social, owned communities, and intent data to understand which accounts are in market, how buyers are forming shortlists, and where marketing should invest.",
+    topics: [
+      "AI is changing how CMOs build teams — Kelly no longer backfills roles one-for-one, instead asking whether an agent can automate the manual work, then reallocating headcount toward strategy, prompting, editing, or customer journey ownership",
+      "BDRs are not dead — at 6sense, BDRs drive 64% of pipeline, but the model is different: AI handles research, follow-up, scheduling, and lower-segment volume, while humans focus on relationships and enterprise selling",
+      "Brand is becoming more important in an AI-led buying journey, as more buyers start research in LLMs and build shortlists before talking to sales",
+      "Kelly is skeptical of relying only on booth scans — at major events, 6sense looks at the full event ecosystem: booth, ancillary meetings, VIP dinners, practitioner events, and hosted experiences",
+      "Multi-touch attribution as relative attribution helps Kelly understand which channels contribute across the full journey, especially for enterprise deals with six-to-nine-month sales cycles",
+      "Kelly is shifting more attention toward the 95% of the ICP not yet in market — owned content, research, press releases, communities, podcasts, and keynotes shape what buyers and LLMs remember",
+      "AI can execute fast but can also be confidently wrong — if the message, positioning, or strategy going in is unclear, AI will scale that confusion faster, making strategy and clarity more valuable",
+    ],
+    themes: ["AI", "Brand", "GTM"],
+    detailTags: [
+      "Multi-Touch Attribution",
+      "Brand Building",
+      "Marketing Careers",
+      "GTM Strategy",
+    ],
+    chapters: [
+      { time: "0:00", title: "Intro" },
+      { time: "1:24", title: "Rebuilding Marketing Teams for the AI Era" },
+      { time: "3:23", title: "Starting and Growing a Marketing Career Today" },
+      { time: "9:51", title: "Rethinking Event Strategy and Follow-Up" },
+      { time: "13:41", title: "Making Better Decisions with Multi-Touch Attribution" },
+      { time: "26:17", title: "Measuring LLM Influence and Zero-Click Discovery" },
+      { time: "30:44", title: "Building Brand Loyalty in an AI-Driven World" },
+      { time: "36:46", title: "Books, Tools, and the Human Skills AI Cannot Replace" },
+      { time: "41:33", title: "Final Thoughts" },
+    ],
+    youtubeUrl: "https://youtu.be/dqI1SETHsI8",
+    spotifyUrl: "https://go.fame.so/spotify-kelly-hopping",
+    appleUrl: "https://go.fame.so/apple-kelly-hopping",
+    duration: "48 min",
+    publishedDate: "Jul 28, 2026",
+    // TODO(episode-18): guest photo is still the generic placeholder — swap in
+    // Kelly's real photo via `npm run make:images kelly-hopping <path>`
+    comingSoon: false,
+    linkedInUrl: "https://www.linkedin.com/in/kellyhopping/",
+    pullQuote:
+      "There is no moat out there of LLM or SEO or anything else that will replace pure brand loyalty. And so building that brand comes from a lot of those personal experiences and community.",
+    hosts: [podcastHosts[0], podcastHosts[2]], // Mada Seghete, Ethan Smith
+  },
 ];
