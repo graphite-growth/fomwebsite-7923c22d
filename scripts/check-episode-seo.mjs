@@ -65,6 +65,14 @@ const ogFileExists = (slug) =>
   [".jpg", ".png", ".jpeg", ".webp"].some((ext) =>
     fs.existsSync(path.join(root, `public/images/og-${slug}${ext}`))
   );
+// Mirrors toIsoDuration() in src/lib/episodeUtils.ts — anything that doesn't
+// match one of these silently drops `duration` from the JSON-LD instead of
+// failing loudly, so we catch it here instead.
+const isParseableDuration = (duration) =>
+  !!duration &&
+  (/^\d+\s*min$/i.test(duration) ||
+    /^\d+:\d{2}:\d{2}$/.test(duration) ||
+    /^\d+:\d{2}$/.test(duration));
 
 // --- run -------------------------------------------------------------------
 const gaps = [];
@@ -86,6 +94,12 @@ for (const slug of slugs) {
     if (!ok) gaps.push(`${slug}: missing in ${label}`);
   }
   if (!dateOk) gaps.push(`${slug}: publishedDate not parseable ("${date}")`);
+
+  // duration must match a format toIsoDuration() understands (JSON-LD depends on it)
+  const duration = field(slug, "duration");
+  if (!isParseableDuration(duration)) {
+    gaps.push(`${slug}: duration not parseable ("${duration}")`);
+  }
 
   // soft check: SEO title truncation
   const name = field(slug, "name") ?? "";

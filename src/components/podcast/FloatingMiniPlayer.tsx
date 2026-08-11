@@ -6,6 +6,7 @@ import {
   SpotifyIcon,
   YouTubeIcon,
 } from "@/components/icons/PlatformIcons";
+import { getYouTubeVideoId } from "@/lib/episodeUtils";
 import { Play, X } from "lucide-react";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -19,19 +20,6 @@ interface FloatingMiniPlayerProps {
   thumbnailImage?: string;
   episodeLabel?: string;
 }
-
-const getYouTubeVideoId = (url: string): string | null => {
-  if (!url) return null;
-  const patterns = [
-    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
-    /youtube\.com\/v\/([^&\n?#]+)/,
-  ];
-  for (const pattern of patterns) {
-    const match = url.match(pattern);
-    if (match) return match[1];
-  }
-  return null;
-};
 
 const FloatingMiniPlayer = ({
   youtubeUrl,
@@ -53,7 +41,7 @@ const FloatingMiniPlayer = ({
   const containerRef = useRef<HTMLButtonElement>(null);
   const playerWrapperRef = useRef<HTMLDivElement>(null);
   const cleanupRef = useRef<(() => void) | null>(null);
-  const videoId = youtubeUrl ? getYouTubeVideoId(youtubeUrl) : null;
+  const videoId = youtubeUrl ? getYouTubeVideoId(youtubeUrl) : "";
 
   useEffect(() => {
     const updatePosition = () => {

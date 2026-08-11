@@ -8,7 +8,7 @@ import {
   toIsoDate,
 } from "@/lib/episodeUtils";
 import { podcastEpisodes } from "@/lib/podcastData";
-import { DEFAULT_OG_IMAGE } from "@/lib/seoConstants";
+import { DEFAULT_OG_IMAGE, safeJsonLd } from "@/lib/seoConstants";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -77,7 +77,7 @@ export default async function PodcastDetailPage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }}
       />
       <PodcastDetailClient slug={slug} />
     </>
