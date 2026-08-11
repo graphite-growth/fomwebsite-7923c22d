@@ -5,6 +5,7 @@ import {
   buildEpisodeSeo,
   getEpisodeCanonicalUrl,
   getYouTubeThumbnail,
+  toIsoDate,
 } from "@/lib/episodeUtils";
 import { podcastEpisodes } from "@/lib/podcastData";
 import { DEFAULT_OG_IMAGE } from "@/lib/seoConstants";
@@ -44,6 +45,8 @@ export async function generateMetadata({
       images: [ogImage],
       type: "article",
       siteName: "Future of Marketing",
+      publishedTime: toIsoDate(episode.publishedDate),
+      modifiedTime: toIsoDate(episode.updatedDate || episode.publishedDate),
     },
     twitter: {
       card: "summary_large_image",

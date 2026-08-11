@@ -6,6 +6,7 @@ import AboutTheHosts from "@/components/podcast/AboutTheHosts";
 import ComingSoonEpisode from "@/components/podcast/ComingSoonEpisode";
 import DetailVerticalText from "@/components/podcast/DetailVerticalText";
 import EpisodeActionButtons from "@/components/podcast/EpisodeActionButtons";
+import EpisodeFaq from "@/components/podcast/EpisodeFaq";
 import EpisodeGuestCard from "@/components/podcast/EpisodeGuestCard";
 import EpisodeHostsCard from "@/components/podcast/EpisodeHostsCard";
 import EpisodeNewsletters from "@/components/podcast/EpisodeNewsletters";
@@ -67,111 +68,143 @@ export default function PodcastDetailClient({
       />
 
       <EpisodeOverlayLayout>
-        {/* Title & Action Buttons */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8 lg:mb-10">
-          <div className="lg:col-span-2 space-y-1 sm:space-y-2">
-            <h3 className="text-section-header font-medium text-foreground mb-5 sm:mb-6">
-              Episode {episode.id}
-              {episode.duration && (
-                <span className="text-muted-foreground font-normal">
-                  {" "}
-                  · {episode.duration}
-                </span>
-              )}
-            </h3>
-            <h1 className="text-display-lg font-display font-medium text-foreground leading-[1.1] stable-text lg:text-[2.2rem]">
-              {episode.overview || episode.name}
-            </h1>
-          </div>
-          <div className="hidden lg:block mt-6 sm:mt-7">
-            <EpisodeActionButtons
-              youtubeUrl={episode.youtubeUrl}
-              spotifyUrl={episode.spotifyUrl}
-              appleUrl={episode.appleUrl}
-            />
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 items-start">
-          <div className="lg:col-span-2 space-y-10 sm:space-y-14 lg:space-y-20">
-            <FadeInSection className="space-y-4 sm:space-y-6">
-              <FloatingMiniPlayer
+        <article>
+          {/* Title & Action Buttons */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8 lg:mb-10">
+            <div className="lg:col-span-2 space-y-1 sm:space-y-2">
+              <p className="text-section-header font-medium text-foreground mb-5 sm:mb-6">
+                Episode {episode.id}
+                {episode.duration && (
+                  <span className="text-muted-foreground font-normal">
+                    {" "}
+                    · {episode.duration}
+                  </span>
+                )}
+              </p>
+              <h1 className="text-display-lg font-display font-medium text-foreground leading-[1.1] stable-text lg:text-[2.2rem]">
+                {episode.overview || episode.name}
+              </h1>
+            </div>
+            <div className="hidden lg:block mt-6 sm:mt-7">
+              <EpisodeActionButtons
                 youtubeUrl={episode.youtubeUrl}
                 spotifyUrl={episode.spotifyUrl}
                 appleUrl={episode.appleUrl}
-                playTrigger={playTrigger}
-                thumbnailImage={POSTER_IMAGES[episode.slug]}
               />
-              <div className="pt-2 lg:hidden">
-                <EpisodeActionButtons
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 items-start">
+            <div className="lg:col-span-2 space-y-10 sm:space-y-14 lg:space-y-20">
+              <FadeInSection className="space-y-4 sm:space-y-6">
+                <FloatingMiniPlayer
                   youtubeUrl={episode.youtubeUrl}
                   spotifyUrl={episode.spotifyUrl}
                   appleUrl={episode.appleUrl}
+                  playTrigger={playTrigger}
+                  thumbnailImage={POSTER_IMAGES[episode.slug]}
+                  episodeLabel={
+                    isIntro
+                      ? "Future of Marketing intro"
+                      : `${episode.name}, ${episode.title} at ${episode.company}`
+                  }
                 />
-              </div>
-            </FadeInSection>
-
-            <FadeInSection>
-              <h3 className="text-section-header font-medium text-foreground mb-5 sm:mb-6">
-                About this Episode
-              </h3>
-              <div className="text-foreground/80 whitespace-pre-line text-[1em] max-w-prose">
-                {episode.fullDescription ||
-                  `Join us for an insightful conversation with ${episode.name}, ${episode.title} at ${episode.company}.`}
-              </div>
-            </FadeInSection>
-
-            {episode.pullQuote && (
-              <FadeInSection>
-                <EpisodePullQuote
-                  quote={episode.pullQuote}
-                  attribution={isIntro ? "Ethan Smith" : episode.name}
-                />
+                <div className="pt-2 lg:hidden">
+                  <EpisodeActionButtons
+                    youtubeUrl={episode.youtubeUrl}
+                    spotifyUrl={episode.spotifyUrl}
+                    appleUrl={episode.appleUrl}
+                  />
+                </div>
               </FadeInSection>
-            )}
 
-            <FadeInSection>
-              <EpisodeTopics
-                topics={episode.topics}
-                detailTags={episode.detailTags}
-              />
-            </FadeInSection>
+              <FadeInSection>
+                <h2 className="text-section-header font-medium text-foreground mb-5 sm:mb-6">
+                  About this Episode
+                </h2>
+                <div className="text-foreground/80 whitespace-pre-line text-[1em] max-w-prose">
+                  {episode.fullDescription ||
+                    `Join us for an insightful conversation with ${episode.name}, ${episode.title} at ${episode.company}.`}
+                </div>
+              </FadeInSection>
 
-            {episode.newslettersMentioned &&
-              episode.newslettersMentioned.length > 0 && (
+              {episode.pullQuote && (
                 <FadeInSection>
-                  <EpisodeNewsletters
-                    newsletters={episode.newslettersMentioned}
-                    guestFirstName={episode.name.split(" ")[0]}
+                  <EpisodePullQuote
+                    quote={episode.pullQuote}
+                    attribution={isIntro ? "Ethan Smith" : episode.name}
                   />
                 </FadeInSection>
               )}
 
-            {!isIntro && episode.bio && (
               <FadeInSection>
-                <GuestBio
-                  name={episode.name}
-                  bio={episode.bio}
-                  company={episode.company}
-                  companyDomain={episode.companyDomain}
-                  linkedInUrl={episode.linkedInUrl}
+                <EpisodeTopics
+                  topics={episode.topics}
+                  detailTags={episode.detailTags}
                 />
               </FadeInSection>
-            )}
 
-            {isIntro && (
-              <FadeInSection>
-                <AboutTheHosts />
-              </FadeInSection>
-            )}
+              {episode.faq && episode.faq.length > 0 && (
+                <FadeInSection>
+                  <EpisodeFaq faq={episode.faq} />
+                </FadeInSection>
+              )}
 
-            {!isIntro && episode.hosts && episode.hosts.length > 0 && (
-              <FadeInSection>
-                <AboutTheHosts hosts={episode.hosts} />
-              </FadeInSection>
-            )}
+              {episode.newslettersMentioned &&
+                episode.newslettersMentioned.length > 0 && (
+                  <FadeInSection>
+                    <EpisodeNewsletters
+                      newsletters={episode.newslettersMentioned}
+                      guestFirstName={episode.name.split(" ")[0]}
+                    />
+                  </FadeInSection>
+                )}
 
-            <div className="lg:hidden space-y-4">
+              {!isIntro && episode.bio && (
+                <FadeInSection>
+                  <GuestBio
+                    name={episode.name}
+                    bio={episode.bio}
+                    company={episode.company}
+                    companyDomain={episode.companyDomain}
+                    linkedInUrl={episode.linkedInUrl}
+                  />
+                </FadeInSection>
+              )}
+
+              {isIntro && (
+                <FadeInSection>
+                  <AboutTheHosts />
+                </FadeInSection>
+              )}
+
+              {!isIntro && episode.hosts && episode.hosts.length > 0 && (
+                <FadeInSection>
+                  <AboutTheHosts hosts={episode.hosts} />
+                </FadeInSection>
+              )}
+
+              <div className="lg:hidden space-y-4">
+                {!isIntro && (
+                  <EpisodeGuestCard
+                    name={episode.name}
+                    title={episode.title}
+                    company={episode.company}
+                    companyDomain={episode.companyDomain}
+                    linkedInUrl={episode.linkedInUrl}
+                  />
+                )}
+                <EpisodeHostsCard
+                  showAllHosts={isIntro}
+                  episodeHosts={episode.hosts}
+                />
+              </div>
+            </div>
+
+            <FadeInSection
+              data-pip-anchor
+              className="hidden lg:flex lg:flex-col space-y-4"
+            >
               {!isIntro && (
                 <EpisodeGuestCard
                   name={episode.name}
@@ -185,28 +218,9 @@ export default function PodcastDetailClient({
                 showAllHosts={isIntro}
                 episodeHosts={episode.hosts}
               />
-            </div>
+            </FadeInSection>
           </div>
-
-          <FadeInSection
-            data-pip-anchor
-            className="hidden lg:flex lg:flex-col space-y-4"
-          >
-            {!isIntro && (
-              <EpisodeGuestCard
-                name={episode.name}
-                title={episode.title}
-                company={episode.company}
-                companyDomain={episode.companyDomain}
-                linkedInUrl={episode.linkedInUrl}
-              />
-            )}
-            <EpisodeHostsCard
-              showAllHosts={isIntro}
-              episodeHosts={episode.hosts}
-            />
-          </FadeInSection>
-        </div>
+        </article>
 
         <FadeInSection>
           <RelatedEpisodes episodes={otherEpisodes} title="More Episodes" />

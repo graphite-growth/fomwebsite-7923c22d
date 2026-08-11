@@ -90,7 +90,7 @@ for (const slug of slugs) {
   // soft check: SEO title truncation
   const name = field(slug, "name") ?? "";
   const overview = field(slug, "overview") ?? "";
-  const titleLen = `${name}: ${overview} | FOM Podcast`.length;
+  const titleLen = `${name}: ${overview} | Future of Marketing`.length;
   if (!soon && titleLen > MAX_TITLE) {
     warnings.push(
       `${slug}: SEO title is ${titleLen} chars → auto-truncated to ${MAX_TITLE}. Tighten "overview" to control what shows.`

@@ -17,6 +17,7 @@ interface FloatingMiniPlayerProps {
   appleUrl?: string;
   playTrigger?: number;
   thumbnailImage?: string;
+  episodeLabel?: string;
 }
 
 const getYouTubeVideoId = (url: string): string | null => {
@@ -38,7 +39,11 @@ const FloatingMiniPlayer = ({
   appleUrl,
   playTrigger,
   thumbnailImage,
+  episodeLabel,
 }: FloatingMiniPlayerProps) => {
+  const thumbnailAlt = episodeLabel
+    ? `${episodeLabel} — episode thumbnail`
+    : "Episode thumbnail";
   const [isPlaying, setIsPlaying] = useState(false);
   const [showPip, setShowPip] = useState(false);
   const [hideAtBottom, setHideAtBottom] = useState(false);
@@ -169,7 +174,7 @@ const FloatingMiniPlayer = ({
             >
               <Image
                 src={thumbnailImage || thumbnailUrl || guestBg}
-                alt="Episode thumbnail"
+                alt={thumbnailAlt}
                 fill
                 className="object-cover transition-transform duration-700 ease-smooth [@media(hover:hover)]:group-hover:scale-105"
                 loading="eager"
@@ -205,7 +210,7 @@ const FloatingMiniPlayer = ({
           >
             <Image
               src={thumbnailImage || thumbnailUrl || guestBg}
-              alt="Episode thumbnail"
+              alt={thumbnailAlt}
               fill
               className="object-cover"
               loading="lazy"

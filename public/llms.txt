@@ -1,0 +1,31 @@
+# Future of Marketing
+
+> Future of Marketing is a podcast where hosts Mada Seghete (Upside), Ethan Smith (Graphite Growth), and Camille Ricketts (XYZ Venture Capital) interview CMOs and marketing leaders at companies like Notion, Figma, Datadog, Webflow, and Square about how AI is changing marketing strategy, go-to-market, and team structure.
+
+## Site
+
+- [Homepage](https://fom.xyz/): All episodes, hosts, and events.
+- [RSS feed](https://fom.xyz/rss.xml): Full episode feed with descriptions.
+- [Privacy Policy](https://fom.xyz/privacy)
+
+## Episodes
+
+- [Russell Banzon (Cresta) — How Cresta's CMO Builds Credibility](https://fom.xyz/podcast/russell-banzon)
+- [Kelly Hopping (6sense) — Rethinking Brand, Multi-Touch Attribution, and Marketing Careers in the AI Era](https://fom.xyz/podcast/kelly-hopping)
+- [Jonathan Kvarfordt (1mind) — The Four Pillars That Build Demand From Zero Brand Awareness](https://fom.xyz/podcast/jonathan-kvarfordt)
+- [Scott Holden (Vanta) — Building a Lean, AI-Era Marketing Team](https://fom.xyz/podcast/scott-holden)
+- [Morgane Palomares (Braintrust) — Building Credibility, Speed, and Leverage Inside Technical Companies](https://fom.xyz/podcast/morgane-palomares)
+- [Vanessa Thompson (Twilio) — Building Radical Empathy at Scale](https://fom.xyz/podcast/vanessa-thompson)
+- [Anthony Kennada (Goldenhour) — How to Build a Brand That Stands Out in the Age of AI](https://fom.xyz/podcast/anthony-kennada)
+- [Alina Vandenberghe (Chili Piper) — From 22 Marketers to 2: Automating 80% of Marketing at Chili Piper](https://fom.xyz/podcast/alina-vandenberghe)
+- [Wendy Werve (Comply) — The Death of the Funnel and the Rise of Signal Driven Marketing](https://fom.xyz/podcast/wendy-werve)
+- [Idan Koren (Verkada) — Marketing AI That Protects People, Places, and Businesses](https://fom.xyz/podcast/idan-koren)
+- [Lindsey Irvine (Square) — Why Customer Obsession and AI Make the Strongest Marketing Team](https://fom.xyz/podcast/lindsey-irvine)
+- [Ceci Stallsmith (Lovable) — What It Takes to Market a Product When the Category Doesn't Fully Exist Yet](https://fom.xyz/podcast/ceci-stallsmith)
+- [Sheila Vashee (Figma) — Community Is the Moat: How Figma Turns Product Passion into Revenue](https://fom.xyz/podcast/sheila-vashee)
+- [Kate Johnson (Dscout) — AI, Alignment, And The Death Of Single-Touch Marketing](https://fom.xyz/podcast/kate-johnson)
+- [Sara Varni (Datadog) — From Community To Revenue: Building An AI-First Marketing Engine](https://fom.xyz/podcast/sara-varni)
+- [Dave Steer (Webflow) — Trust Is The Ultimate Differentiator In The Age Of AI](https://fom.xyz/podcast/dave-steer)
+- [Lena Waters (Notion) — Rethinking Workflows in the Age of AI](https://fom.xyz/podcast/lena-waters)
+- [Meagen Eisenberg (Samsara) — Why the Best CMOs Think Like Operators, Not Marketers](https://fom.xyz/podcast/meagen-eisenberg)
+- [Why Authenticity Beats Automation in Modern Marketing](https://fom.xyz/podcast/the-future-of-marketing)

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: { absolute: "Page Not Found | FOM Podcast" },
+  title: { absolute: "Page Not Found | Future of Marketing" },
   description: "The page you're looking for doesn't exist.",
   robots: { index: false, follow: false },
 };
