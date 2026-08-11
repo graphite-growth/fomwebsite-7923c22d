@@ -6,6 +6,7 @@ import {
   SpotifyIcon,
   YouTubeIcon,
 } from "@/components/icons/PlatformIcons";
+import { getYouTubeVideoId } from "@/lib/episodeUtils";
 import { Play, X } from "lucide-react";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -17,20 +18,8 @@ interface FloatingMiniPlayerProps {
   appleUrl?: string;
   playTrigger?: number;
   thumbnailImage?: string;
+  episodeLabel?: string;
 }
-
-const getYouTubeVideoId = (url: string): string | null => {
-  if (!url) return null;
-  const patterns = [
-    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
-    /youtube\.com\/v\/([^&\n?#]+)/,
-  ];
-  for (const pattern of patterns) {
-    const match = url.match(pattern);
-    if (match) return match[1];
-  }
-  return null;
-};
 
 const FloatingMiniPlayer = ({
   youtubeUrl,
@@ -38,7 +27,11 @@ const FloatingMiniPlayer = ({
   appleUrl,
   playTrigger,
   thumbnailImage,
+  episodeLabel,
 }: FloatingMiniPlayerProps) => {
+  const thumbnailAlt = episodeLabel
+    ? `${episodeLabel} — episode thumbnail`
+    : "Episode thumbnail";
   const [isPlaying, setIsPlaying] = useState(false);
   const [showPip, setShowPip] = useState(false);
   const [hideAtBottom, setHideAtBottom] = useState(false);
@@ -48,7 +41,7 @@ const FloatingMiniPlayer = ({
   const containerRef = useRef<HTMLButtonElement>(null);
   const playerWrapperRef = useRef<HTMLDivElement>(null);
   const cleanupRef = useRef<(() => void) | null>(null);
-  const videoId = youtubeUrl ? getYouTubeVideoId(youtubeUrl) : null;
+  const videoId = youtubeUrl ? getYouTubeVideoId(youtubeUrl) : "";
 
   useEffect(() => {
     const updatePosition = () => {
@@ -169,7 +162,7 @@ const FloatingMiniPlayer = ({
             >
               <Image
                 src={thumbnailImage || thumbnailUrl || guestBg}
-                alt="Episode thumbnail"
+                alt={thumbnailAlt}
                 fill
                 className="object-cover transition-transform duration-700 ease-smooth [@media(hover:hover)]:group-hover:scale-105"
                 loading="eager"
@@ -205,7 +198,7 @@ const FloatingMiniPlayer = ({
           >
             <Image
               src={thumbnailImage || thumbnailUrl || guestBg}
-              alt="Episode thumbnail"
+              alt={thumbnailAlt}
               fill
               className="object-cover"
               loading="lazy"

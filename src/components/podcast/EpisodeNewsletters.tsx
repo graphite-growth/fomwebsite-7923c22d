@@ -15,9 +15,9 @@ const EpisodeNewsletters = ({
 
   return (
     <div>
-      <h3 className="text-section-header font-medium text-foreground mb-5 sm:mb-6">
+      <h2 className="text-section-header font-medium text-foreground mb-5 sm:mb-6">
         {guestFirstName}&apos;s Reco Newsletters
-      </h3>
+      </h2>
       <ul className="space-y-3">
         {newsletters.map((newsletter) => (
           <li key={newsletter.name}>

@@ -12,9 +12,9 @@ const AboutTheHosts = ({ hosts }: AboutTheHostsProps) => {
   const displayHosts = hosts || allHosts;
   return (
     <div>
-      <h3 className="text-section-header font-medium text-foreground mb-5 sm:mb-6">
+      <h2 className="text-section-header font-medium text-foreground mb-5 sm:mb-6">
         About the Hosts
-      </h3>
+      </h2>
       <div className="space-y-8">
         {displayHosts.map((host) => (
           <div key={host.name} className="space-y-2">

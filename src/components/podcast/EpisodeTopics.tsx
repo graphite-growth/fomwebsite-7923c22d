@@ -21,9 +21,9 @@ const EpisodeTopics = ({
 
   return (
     <div className="max-w-prose">
-      <h3 className="text-section-header font-medium text-foreground mb-6">
+      <h2 className="text-section-header font-medium text-foreground mb-6">
         {title}
-      </h3>
+      </h2>
 
       {/* Detail Tag Pills */}
       {detailTags && detailTags.length > 0 && (

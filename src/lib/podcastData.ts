@@ -18,6 +18,11 @@ export interface NewsletterMention {
   description?: string;
 }
 
+export interface EpisodeFaqItem {
+  question: string;
+  answer: string;
+}
+
 export interface PodcastEpisode {
   id: number;
   slug: string;
@@ -37,12 +42,15 @@ export interface PodcastEpisode {
   appleUrl?: string;
   duration: string;
   publishedDate: string;
+  /** Last time this episode's content (not the podcast itself) was edited. Defaults to publishedDate when omitted. */
+  updatedDate?: string;
   comingSoon: boolean;
   linkedInUrl?: string;
   previewVideoUrl?: string;
   hosts?: PodcastHost[];
   pullQuote?: string;
   newslettersMentioned?: NewsletterMention[];
+  faq?: EpisodeFaqItem[];
 }
 
 // Shared hosts data
@@ -113,6 +121,30 @@ From the LinkedIn AI content trap to why Reddit might be the most underrated cha
       "https://podcasts.apple.com/us/podcast/why-authenticity-beats-automation-in-modern-marketing/id1876216633?i=1000750164421",
     duration: "25 min",
     publishedDate: "Jan 1, 2026",
+    faq: [
+      {
+        question: "What is the Future of Marketing podcast about?",
+        answer:
+          "Future of Marketing is a show where hosts Camille Ricketts (XYZ Venture Capital), Ethan Smith (Graphite Growth), and Mada Seghete (Upside) have honest conversations about what's actually changing inside modern marketing teams as AI adoption accelerates, without fluff or vendor pitches.",
+      },
+      {
+        question: "Why does AI adoption take longer than people expect?",
+        answer:
+          "As with the internet, mobile, and social media, the adoption cycle for a new technology is longer than most people assume — only a small number of people can think several steps ahead, while most people take time to catch up.",
+      },
+      {
+        question:
+          "Should marketers let AI write their thought leadership content?",
+        answer:
+          'The hosts disagree: one refuses to let AI write their LinkedIn posts to preserve authenticity, while another has used AI-assisted posts that hit 500K views — showing most teams currently use AI to make "bad" work faster rather than better work.',
+      },
+      {
+        question:
+          "Why are creative directors, writers, and storytellers becoming more valuable, not less, in an AI-first world?",
+        answer:
+          "As personalization and automation flood every channel, human storytelling and authentic connection become the differentiator AI can't replicate, making creative talent more valuable rather than obsolete.",
+      },
+    ],
     pullQuote:
       "Whenever there's a new technology, the adoption cycle is actually longer than people often think. If you think about when the Internet was introduced, it took a very long time to actually adopt the Internet and apply it in novel ways. Same with mobile, same with social. And so with AI, I think there's a small number of people who can think 10 steps ahead and most people cannot.",
     themes: ["AI"],
@@ -164,6 +196,30 @@ This episode is a practical blueprint for CMOs and marketing leaders who want AI
       "https://podcasts.apple.com/us/podcast/why-the-best-cmos-think-like-operators-not-marketers/id1876216633?i=1000750167406",
     duration: "52 min",
     publishedDate: "Jan 15, 2026",
+    faq: [
+      {
+        question: "How many AI marketing agents has Samsara deployed?",
+        answer:
+          "Samsara has deployed 13 live AI marketing agents, with 26 more in development, used to replace expensive SaaS tools and automate roughly 50% of marketing operations tickets.",
+      },
+      {
+        question: "How did Samsara get non-technical marketers to adopt AI?",
+        answer:
+          "Meagen Eisenberg's team enforced adoption through training, internal hackathons, performance reviews, and no-code tools, making daily AI usage a non-negotiable part of the culture rather than optional.",
+      },
+      {
+        question:
+          "What metric does Samsara use to measure whether AI is actually working?",
+        answer:
+          "Samsara tracks pipeline per marketer as a key productivity metric, to expose whether AI adoption is genuinely moving the business rather than just producing more output.",
+      },
+      {
+        question:
+          "How does Samsara track its visibility inside AI search tools?",
+        answer:
+          "Samsara built an internal tool called Lighthouse to track and compete for visibility inside LLMs in real time.",
+      },
+    ],
     themes: ["AI"],
     detailTags: ["AI Strategy", "Automation", "Leadership", "AEO", "Culture"],
     comingSoon: false,
@@ -209,6 +265,29 @@ This episode is a blueprint for marketing leaders navigating the shift from AI a
       "https://podcasts.apple.com/us/podcast/rethinking-workflows-in-the-age-of-ai-with-lena-waters/id1876216633?i=1000750505883",
     duration: "51 min",
     publishedDate: "Feb 19, 2026",
+    faq: [
+      {
+        question:
+          "How does Notion think differently about AI compared to treating it as just a feature?",
+        answer:
+          "Instead of bolting AI onto existing workflows, Notion challenges customers to question whether the workflow itself should still exist at all, treating AI as a reason to rethink work rather than just automate it.",
+      },
+      {
+        question: "How does Notion shorten its enterprise sales cycles?",
+        answer:
+          'By bringing prospects directly into the product — "show, don\'t tell" — rather than relying on decks or lengthy sales pitches, which collapses discovery time.',
+      },
+      {
+        question: "Are PLG and enterprise sales competing motions at Notion?",
+        answer:
+          "No — Lena Waters describes them as part of the same continuous loop that reinforce each other rather than pulling in different directions.",
+      },
+      {
+        question: 'What is the "warmth vs. competency" framework?',
+        answer:
+          "It's Notion's framework for moving upmarket into the enterprise without losing the approachable, loved qualities that built its early product-led following.",
+      },
+    ],
     themes: ["Brand", "GTM"],
     detailTags: [
       "Future of Work",
@@ -251,6 +330,29 @@ This episode is a blueprint for marketing leaders navigating the shift from AI a
     spotifyUrl: "https://open.spotify.com/episode/11wp5t22MdBePMEHfwe89S",
     duration: "55 min",
     publishedDate: "Feb 26, 2026",
+    faq: [
+      {
+        question: "What is Dave Steer's Trust Equation?",
+        answer:
+          "Trust = (Reliability + Credibility + Approachability) divided by Self-Interest — a framework for why customers believe a company's claims in a market where AI can generate any claim.",
+      },
+      {
+        question: "Why is the average CMO tenure only about 18 months?",
+        answer:
+          'Dave Steer argues that "attribution theater" — reporting activity instead of real incremental ROI — quietly erodes marketing\'s credibility with the rest of the business, contributing to short CMO tenures.',
+      },
+      {
+        question: "What is the Three-Part Fit Test for evaluating a CMO role?",
+        answer:
+          'It evaluates a potential CMO role across people, "bones" (total addressable market), and personal narrative fit.',
+      },
+      {
+        question:
+          "What are the three phases of AI adoption in marketing, according to Dave Steer?",
+        answer:
+          'Assistant, agentic workflows, and eventually the emergence of a "go-to-market engineer" role.',
+      },
+    ],
     themes: ["Brand", "AI"],
     detailTags: [
       "Brand Trust",
@@ -292,6 +394,31 @@ This episode is a blueprint for marketing leaders navigating the shift from AI a
     appleUrl: "https://apple.co/4l7QPM6",
     duration: "54 min",
     publishedDate: "Mar 5, 2026",
+    faq: [
+      {
+        question:
+          "How do you market effectively to developers without alienating them?",
+        answer:
+          "Sara Varni's approach is relevance over messaging — market to developers by respecting their expertise and workflows rather than using traditional marketing language aimed at economic buyers.",
+      },
+      {
+        question:
+          "What is the enterprise hackathon playbook Sara Varni describes?",
+        answer:
+          "A hackathon format that aligns developers and executives in a single day, collapsing sales cycles and creating internal champions for the deal.",
+      },
+      {
+        question:
+          "Which marketing tasks should AI automate, according to Sara Varni?",
+        answer:
+          'AI should handle the "soul-crushing" repetitive tasks — resizing ads, writing redundant copy variations, summarizing notes — while strategic thinking and creative judgment stay human.',
+      },
+      {
+        question: "How should companies measure event ROI?",
+        answer:
+          "By calculating real pipeline-to-spend ratios rather than vague brand-awareness metrics, which builds trust with the sales team.",
+      },
+    ],
     themes: ["AI", "GTM"],
     detailTags: [
       "Developer-First",
@@ -334,6 +461,29 @@ This episode is a blueprint for marketing leaders navigating the shift from AI a
       "https://podcasts.apple.com/us/podcast/ai-alignment-and-the-death-of-single-touch/id1876216633?i=1000754858206",
     duration: "50 min",
     publishedDate: "Mar 12, 2026",
+    faq: [
+      {
+        question:
+          "Why does Kate Johnson think single-source attribution is harmful?",
+        answer:
+          'Arguing over which channel "sourced" a deal creates internal credit-taking battles and undermines team morale; she prefers "deal storytelling" — understanding the full narrative of influence across every touchpoint.',
+      },
+      {
+        question: 'What is the "project pod" structure Dscout uses?',
+        answer:
+          "A lean, cross-functional team model built around ownership rather than rigid departmental silos, letting small teams outperform bigger budgets.",
+      },
+      {
+        question: "Why did Dscout move SDRs under marketing?",
+        answer:
+          "To tighten the feedback loop between messaging and sales, creating closer go-to-market alignment.",
+      },
+      {
+        question: "Where does Kate Johnson think AI still falls short?",
+        answer:
+          "AI excels at pattern recognition, drafting, and data parsing, but fails at discovery, taste, and judgment — the things that still require human leadership.",
+      },
+    ],
     themes: ["Brand", "AI"],
     detailTags: [
       "Attribution & Measurement",
@@ -383,6 +533,31 @@ The conversation explores what companies get wrong about PLG (optimizing before 
       "https://podcasts.apple.com/us/podcast/community-is-the-moat-how-figma-turns-product-passion/id1876216633?i=1000756337876",
     duration: "38:59",
     publishedDate: "Mar 19, 2026",
+    faq: [
+      {
+        question:
+          "What percentage of Figma's enterprise deals start with individual users?",
+        answer:
+          "About 70% of Figma's enterprise deals begin with individual users adopting the product before it expands into a company-wide deal.",
+      },
+      {
+        question: "What is Figma's Config conference?",
+        answer:
+          'Config is Figma\'s annual user conference, described as the "Coachella for designers," which turns community enthusiasm into a cultural moment and a distribution channel in its own right.',
+      },
+      {
+        question:
+          "What does Sheila Vashee say companies get wrong about product-led growth?",
+        answer:
+          "Companies often try to optimize the PLG funnel before they've actually earned genuine user love — funnel optimization can't substitute for a product people are excited about.",
+      },
+      {
+        question:
+          'Why does Figma say "vibe coding" isn\'t a replacement for craft?',
+        answer:
+          "Vibe coding is treated as an entry point into building, not a replacement for the taste and judgment that define quality design work.",
+      },
+    ],
     themes: ["GTM", "AI", "Brand"],
     detailTags: [
       "PLG",
@@ -470,6 +645,31 @@ Looking ahead, Lindsey believes the future marketing organization will be define
     appleUrl: "https://bit.ly/4vAEGEh",
     duration: "37:09",
     publishedDate: "Apr 16, 2026",
+    faq: [
+      {
+        question:
+          'What is marketing\'s "dual mandate" according to Lindsey Irvine?',
+        answer:
+          "Marketing now has to create content that resonates with human buyers and content that AI agents can discover, interpret, and recommend, as search moves toward LLMs and AI overviews.",
+      },
+      {
+        question: "How does Square rank in AI search results?",
+        answer:
+          "By focusing on a clear message, measuring visibility, and prioritizing earned content — Lindsey Irvine notes over 80% of citations come from earned, not owned, media.",
+      },
+      {
+        question:
+          "How is marketing to SMB business owners different from marketing to technical B2B buyers?",
+        answer:
+          "SMB owners aren't technologists — Square prioritizes simplicity, trust, and time savings over technical complexity, since traditional B2B playbooks built for technical buyers don't translate directly.",
+      },
+      {
+        question:
+          "What kind of marketer does Lindsey Irvine think the future needs?",
+        answer:
+          'Builders who prototype rather than just storytellers who pitch, and leaders who act as cross-functional "quarterbacks" orchestrating both human teams and AI agents.',
+      },
+    ],
     themes: ["AI", "GTM"],
     detailTags: [
       "Customer Obsession",
@@ -521,6 +721,30 @@ Ultimately, Idan's perspective is pragmatic: AI can accelerate execution and ana
     appleUrl: "https://bit.ly/4t1AcEe",
     duration: "53:34",
     publishedDate: "Apr 28, 2026",
+    faq: [
+      {
+        question:
+          "What does Idan Koren say is the biggest barrier to scaling outbound email?",
+        answer:
+          "Not copy quality — it's deliverability and inbox reputation, which most teams underestimate compared to the message itself.",
+      },
+      {
+        question: "How does Verkada personalize outreach at scale?",
+        answer:
+          "By capturing every prospect interaction (emails, call recordings, CRM notes) and using that first-party data to power outreach that references real past conversations.",
+      },
+      {
+        question: 'What is a "lukewarm win" and why does it matter?',
+        answer:
+          "A lukewarm win is a deal or result that looks like progress but quietly slows down company growth — Idan Koren emphasizes identifying and eliminating these rather than chasing surface-level wins.",
+      },
+      {
+        question:
+          "What kind of marketing organization does Verkada build around AI?",
+        answer:
+          "A highly technical one, treating marketing like a science — with data as the foundation for experimentation and AI used to stress-test decisions, backed by operational systems like attribution frameworks and lead routing infrastructure.",
+      },
+    ],
     themes: ["AI", "GTM"],
     detailTags: [
       "Proprietary Data",
@@ -575,6 +799,28 @@ Finally, the episode explores what it takes to build and sustain high-performing
     appleUrl: "https://apple.co/4donDOx",
     duration: "55:19",
     publishedDate: "May 5, 2026",
+    faq: [
+      {
+        question: 'What is "pinball marketing"?',
+        answer:
+          "Wendy Werve's term for a dynamic, signal-driven go-to-market approach where teams respond to real-time buyer intent as it happens, instead of forcing prospects through a fixed linear funnel.",
+      },
+      {
+        question: "What's the difference between ICP and persona?",
+        answer:
+          "ICP and persona are often confused; Wendy Werve argues effective teams use data — not intuition — to define which customers actually drive long-term value, rather than guessing based on a generic buyer persona.",
+      },
+      {
+        question: "Why does Comply avoid using MQLs as a success metric?",
+        answer:
+          "Wendy Werve moved the team away from vanity metrics like MQLs toward pipeline and conversion rate, which more directly reflect revenue impact.",
+      },
+      {
+        question: 'What is Comply\'s "VC mindset" approach to martech?',
+        answer:
+          "Treating martech investment decisions the way a VC evaluates bets — a mindset Wendy Werve says gives her team an edge in build-vs-buy and tooling decisions.",
+      },
+    ],
     themes: ["AI", "GTM"],
     detailTags: [
       "Pinball Marketing",
@@ -635,6 +881,30 @@ The takeaway is clear: in a market defined by rapid change, the winners will be 
     appleUrl: "https://tinyurl.com/ysb222xx",
     duration: "67:57",
     publishedDate: "Apr 9, 2026",
+    faq: [
+      {
+        question: "Are developers really immune to marketing?",
+        answer:
+          "No — Ceci Stallsmith argues developers are deeply influenced by brand, identity, and culture, just less obviously; choosing a tool is a signal of taste and belonging, not a purely functional decision.",
+      },
+      {
+        question:
+          'Why does Lovable avoid locking into buzzwords like "vibe coding" too early?',
+        answer:
+          "Category language in a fast-moving AI space can backfire if adopted too soon, so Lovable runs multiple messaging experiments simultaneously and lets the market determine what sticks.",
+      },
+      {
+        question: "How does AI change marketing experimentation?",
+        answer:
+          "The advantage isn't AI-generated content itself — it's how AI compresses feedback loops, letting smaller teams test more campaigns and learn faster than before.",
+      },
+      {
+        question:
+          'How should companies respond to AI-driven "consensus" about their brand?',
+        answer:
+          "By actively flooding the ecosystem with fresh, credible signals rather than trying to erase outdated positioning that AI systems have already absorbed from years of content.",
+      },
+    ],
     themes: ["AI", "Brand", "GTM"],
     detailTags: [
       "Category Creation",
@@ -698,6 +968,31 @@ Ultimately, this conversation reframes the role of marketing teams: not as execu
     appleUrl: "https://bit.ly/3PT2285",
     duration: "46 min",
     publishedDate: "May 19, 2026",
+    faq: [
+      {
+        question:
+          "How did Alina Vandenberghe shrink Chili Piper's marketing team from 22 to 2?",
+        answer:
+          "By auditing every task, measuring impact versus effort like an engineering problem, and automating roughly 80% of the work that didn't require human creativity, freeing the remaining team to focus on strategy.",
+      },
+      {
+        question:
+          "Why does Alina Vandenberghe say booked meetings alone are a misleading metric?",
+        answer:
+          "Booked meetings don't capture the full picture — she emphasizes tracking the entire customer journey from pipeline to retention to understand true business impact.",
+      },
+      {
+        question: "Why does AI tend toward average marketing outcomes?",
+        answer:
+          "Because it's trained to converge on common patterns; the real competitive advantage comes from human marketers willing to take contrarian positions and create emotionally resonant work that stands out.",
+      },
+      {
+        question:
+          "What's an example of a small operational fix with outsized ROI?",
+        answer:
+          "Filtering out fake or low-quality leads — a seemingly minor fix that had a significant effect on team productivity and morale.",
+      },
+    ],
     comingSoon: false,
     linkedInUrl: "https://www.linkedin.com/in/alinav/",
     pullQuote:
@@ -735,6 +1030,31 @@ Ultimately, this conversation reframes the role of marketing teams: not as execu
     appleUrl: "https://apple.co/4dW63AG",
     duration: "56 min",
     publishedDate: "May 20, 2026",
+    faq: [
+      {
+        question:
+          "Why does Anthony Kennada say distribution is now harder than building the product?",
+        answer:
+          "Because AI makes products easier to build, the bottleneck shifts to standing out and reaching buyers — distribution becomes the primary competitive challenge.",
+      },
+      {
+        question: 'What is the "95-5 rule" in Anthony Kennada\'s framework?',
+        answer:
+          "It's a reminder that most of your audience (the 95%) is watching but not yet ready to buy, which should shape how companies build ongoing brand presence rather than only chasing bottom-of-funnel demand.",
+      },
+      {
+        question:
+          "Will AI agents replace people in enterprise B2B buying decisions?",
+        answer:
+          "Anthony Kennada believes people will still shape enterprise buying decisions even as AI agents increasingly influence shortlists and recommendations.",
+      },
+      {
+        question:
+          'What does Anthony Kennada mean by the "human last mile" of brand strategy?',
+        answer:
+          "It's the final 10% of brand work — asking better questions, knowing what to cut, reading the room — that still requires human taste, judgment, and wisdom no AI system can fully replicate.",
+      },
+    ],
     comingSoon: false,
     linkedInUrl: "https://www.linkedin.com/in/akennada/",
     hosts: [podcastHosts[1], podcastHosts[0]], // Camille Ricketts, Mada Seghete
@@ -770,6 +1090,31 @@ Ultimately, this conversation reframes the role of marketing teams: not as execu
     appleUrl: "https://bit.ly/4ogT6pP",
     duration: "57 min",
     publishedDate: "Jun 9, 2026",
+    faq: [
+      {
+        question:
+          'What does Vanessa Thompson mean by "radical empathy at scale"?',
+        answer:
+          "Using data, AI agents, and customer signals to help buyers succeed at the exact moments they're stuck, scaling genuine empathy rather than generic, one-size-fits-all journeys.",
+      },
+      {
+        question:
+          "How does Twilio run PLG and sales-assisted motions together?",
+        answer:
+          "Both motions run in parallel under one marketing team rather than being treated as separate, competing paths.",
+      },
+      {
+        question: "Where does Twilio use AI agents in its funnel?",
+        answer:
+          "Across 100% of signups and inbound sales requests, to help prospects get started, qualify intent, and route the right people to sales.",
+      },
+      {
+        question:
+          "Why is gated thought leadership losing effectiveness as a lead engine?",
+        answer:
+          "Buyers increasingly get information elsewhere — search, community, video — so gating content behind a form is no longer the high-performing lead generator it used to be.",
+      },
+    ],
     comingSoon: false,
     linkedInUrl: "https://www.linkedin.com/in/vanessathomps/",
     pullQuote:
@@ -805,6 +1150,32 @@ Ultimately, this conversation reframes the role of marketing teams: not as execu
     appleUrl: "https://tinyurl.com/45wk3j46",
     duration: "51 min",
     publishedDate: "Jun 17, 2026",
+    faq: [
+      {
+        question:
+          "How did Morgane Palomares use Reddit and Gong calls in her first 90 days at Braintrust?",
+        answer:
+          "She used Reddit scraping, Gong call analysis, and AI transcript reviews to diagnose the company's market and customer reality quickly, rather than relying only on internal assumptions.",
+      },
+      {
+        question:
+          "How does Morgane Palomares build trust with executives as a new marketing leader?",
+        answer:
+          "Through monthly executive readouts that make observations, gaps, and tradeoffs explicit, rather than only reporting good news.",
+      },
+      {
+        question:
+          "Why might product marketing become one of the highest-leverage AI-enabled functions?",
+        answer:
+          "Because PMM sits at the intersection of technical insight and go-to-market execution — exactly where AI can help move faster without losing the quality bar in technical B2B companies.",
+      },
+      {
+        question:
+          "How does Morgane Palomares avoid slowing down product launches while shaping messaging?",
+        answer:
+          "Her rule is to never slow down a launch unless something is fundamentally wrong, earning credibility with engineering by only escalating real issues rather than inserting marketing review as a routine gate.",
+      },
+    ],
     comingSoon: false,
     linkedInUrl: "https://www.linkedin.com/in/morganepalomares/",
     pullQuote:
@@ -863,6 +1234,31 @@ Ultimately, this conversation reframes the role of marketing teams: not as execu
     appleUrl: "https://apple.co/4fcaetY",
     duration: "60 min",
     publishedDate: "Jun 30, 2026",
+    faq: [
+      {
+        question:
+          'What does Scott Holden mean when he says "expertise is dead"?',
+        answer:
+          "Not that experience stopped mattering, but that old marketing playbooks expire faster than most leaders can admit, requiring constant reinvention rather than relying on past expertise.",
+      },
+      {
+        question:
+          "How did Vanta find the insight behind its enterprise compliance campaign?",
+        answer:
+          'By using AI to mine hundreds of Gong sales calls, which surfaced "audit hell" as the core pain point behind its enterprise compliance messaging.',
+      },
+      {
+        question: "When can brand spend behave like performance spend?",
+        answer:
+          "Scott Holden says this happens when the product solves an urgent, transactional pain — in that case, brand campaigns can drive the kind of direct response usually associated with performance marketing.",
+      },
+      {
+        question:
+          "What three roles would Scott Holden build a 10-person marketing team around?",
+        answer:
+          "A product marketer, a systems architect, and an influencer-style creator.",
+      },
+    ],
     comingSoon: false,
     linkedInUrl: "https://www.linkedin.com/in/scottiholden/",
     pullQuote:
@@ -914,6 +1310,32 @@ Ultimately, this conversation reframes the role of marketing teams: not as execu
     appleUrl: "https://apple.co/4fghIuK",
     duration: "43 min",
     publishedDate: "Jul 14, 2026",
+    faq: [
+      {
+        question:
+          "Why does Jonathan Kvarfordt think most teams are using AI too narrowly in GTM?",
+        answer:
+          "Because they try to make old workflows, like meeting booking, faster and cheaper instead of using AI to create a fundamentally better buyer experience across the whole decision process.",
+      },
+      {
+        question:
+          "What are the four pillars Jonathan Kvarfordt used to build trust at Momentum?",
+        answer:
+          "Customer amplification, trusted communities, valuable content, and surround-sound visibility.",
+      },
+      {
+        question:
+          "What generated the most pipeline for Jonathan Kvarfordt in a single year?",
+        answer:
+          "A 200-prompt GTM library he personally wrote — more than any other single initiative that year.",
+      },
+      {
+        question:
+          'Why is optimizing for "meetings booked" still a seller-first model?',
+        answer:
+          "Because it measures success from the seller's perspective rather than asking whether the buyer actually had a more helpful buying experience.",
+      },
+    ],
     // TODO(episode-17): guest photo is still the generic placeholder — swap in
     // Jonathan's real photo via `npm run make:images jonathan-kvarfordt <path>`
     comingSoon: false,
@@ -929,7 +1351,8 @@ Ultimately, this conversation reframes the role of marketing teams: not as execu
     title: "CMO",
     company: "6sense",
     companyDomain: "6sense.com",
-    overview: "Rethinking Brand, Multi-Touch Attribution, and Marketing Careers in the AI Era",
+    overview:
+      "Rethinking Brand, Multi-Touch Attribution, and Marketing Careers in the AI Era",
     bio: "is CMO at 6sense, where she leads marketing for a GTM intelligence platform helping B2B revenue teams identify which accounts are actively researching and in market before they fill out a form or speak to sales.",
     fullDescription:
       "In this episode of Future of Marketing, hosts Mada Seghete and Ethan Smith sit down with Kelly Hopping, CMO at 6sense, to unpack how AI is changing the way marketing teams are built, measured, and managed. Kelly explains why she no longer backfills roles one-for-one, how agents are shifting manual execution work, and why modern marketing teams need more senior strategic thinkers, editors, prompt engineers, and customer journey owners. She also shares how 6sense uses BDRs, AI email, event follow-up, multi-touch attribution, paid social, owned communities, and intent data to understand which accounts are in market, how buyers are forming shortlists, and where marketing should invest.",
@@ -954,10 +1377,19 @@ Ultimately, this conversation reframes the role of marketing teams: not as execu
       { time: "1:24", title: "Rebuilding Marketing Teams for the AI Era" },
       { time: "3:23", title: "Starting and Growing a Marketing Career Today" },
       { time: "9:51", title: "Rethinking Event Strategy and Follow-Up" },
-      { time: "13:41", title: "Making Better Decisions with Multi-Touch Attribution" },
-      { time: "26:17", title: "Measuring LLM Influence and Zero-Click Discovery" },
+      {
+        time: "13:41",
+        title: "Making Better Decisions with Multi-Touch Attribution",
+      },
+      {
+        time: "26:17",
+        title: "Measuring LLM Influence and Zero-Click Discovery",
+      },
       { time: "30:44", title: "Building Brand Loyalty in an AI-Driven World" },
-      { time: "36:46", title: "Books, Tools, and the Human Skills AI Cannot Replace" },
+      {
+        time: "36:46",
+        title: "Books, Tools, and the Human Skills AI Cannot Replace",
+      },
       { time: "41:33", title: "Final Thoughts" },
     ],
     youtubeUrl: "https://youtu.be/dqI1SETHsI8",
@@ -965,12 +1397,127 @@ Ultimately, this conversation reframes the role of marketing teams: not as execu
     appleUrl: "https://go.fame.so/apple-kelly-hopping",
     duration: "48 min",
     publishedDate: "Jul 28, 2026",
+    faq: [
+      {
+        question: "Are BDRs still relevant at 6sense in the AI era?",
+        answer:
+          "Yes — BDRs drive 64% of 6sense's pipeline, but the model has changed: AI now handles research, follow-up, and lower-segment volume while BDRs focus on relationships and enterprise selling.",
+      },
+      {
+        question:
+          "Why is brand becoming more important as more buyers research with LLMs?",
+        answer:
+          "Because buyers increasingly form shortlists inside AI tools before ever talking to sales, so what a brand has published and is known for shapes those shortlists before a rep is involved.",
+      },
+      {
+        question:
+          "Why is Kelly Hopping skeptical of relying only on event booth scans?",
+        answer:
+          "A booth scan misses the fuller picture — 6sense evaluates the whole event ecosystem, including ancillary meetings, VIP dinners, and practitioner sessions.",
+      },
+      {
+        question: "What's the risk of using AI without a clear strategy first?",
+        answer:
+          "AI can execute quickly but be confidently wrong — if the underlying message or strategy is unclear, AI will scale that confusion faster, making clear strategy more valuable, not less.",
+      },
+    ],
     // TODO(episode-18): guest photo is still the generic placeholder — swap in
     // Kelly's real photo via `npm run make:images kelly-hopping <path>`
     comingSoon: false,
     linkedInUrl: "https://www.linkedin.com/in/kellyhopping/",
     pullQuote:
       "There is no moat out there of LLM or SEO or anything else that will replace pure brand loyalty. And so building that brand comes from a lot of those personal experiences and community.",
+    hosts: [podcastHosts[0], podcastHosts[2]], // Mada Seghete, Ethan Smith
+  },
+  {
+    id: 19,
+    slug: "russell-banzon",
+    name: "Russell Banzon",
+    title: "CMO",
+    company: "Cresta",
+    companyDomain: "cresta.com",
+    overview: "How Cresta's CMO Builds Credibility",
+    bio: "is a B2B GTM leader who is passionate about driving pipeline and revenue for SaaS technology companies. As the former VP of Marketing at Gong, he played a key role in scaling the company from seven figures to nine figures in ARR, leading category creation, international expansion, and the evolution from a single-product company to a multi-product platform. Now, as the CMO at Cresta, he is helping to shape the future of AI in the contact center space, though that story is still being written.",
+    fullDescription:
+      "In this episode of Future of Marketing, hosts Mada Seghete (Upside) and Ethan Smith (Graphite) sit down with Russell Banzon, CMO at Cresta, about how marketing changes when enterprise buyers are looking for real AI outcomes, not vague claims.\n\nRussell shares how Cresta builds customer case studies starting in the presales process — locking in target KPIs and publish rights before a contract is signed — and why named logos, verified metrics, and on-camera customer video are what make results credible in a category full of unnamed customers and unverifiable numbers.\n\nThe conversation also covers why analyst reports work best as middle-to-bottom-funnel assets, placed in demo-page exit-intent pop-ups, AE follow-up emails, and analyst-attended events rather than top-of-funnel awareness plays, and how analyst interest compounds through customer success rather than outreach alone.\n\nRussell closes with Cresta's approach to out-of-home advertising — targeting the cities where individual buyers, new hires, and investors actually live rather than where accounts are headquartered — and the $1 / $10 / $100 / $1k task framework Cresta uses to decide what marketing work is worth automating.",
+    topics: [
+      "Why case study rights belong in the presales conversation — trading a discount for pre-agreed KPIs and permission to publish once those KPIs are hit",
+      "How Cresta makes case studies hard to fake with on-camera customer video, in a category full of unnamed customers and unverifiable numbers",
+      "Why Fortune 500 accounts often add a second approval layer in comms and brand, beyond the working team",
+      "How building the story so the customer champion looks good creates future case study opportunities — Cresta has seen champions get promoted for featured work",
+      "Why analyst reports work as middle-to-bottom-funnel assets — placed in demo-page exit-intent pop-ups, AE recap emails, and analyst-attended events rather than top-of-funnel awareness",
+      "How analyst interest compounds through customer success, to the point that analysts have asked Cresta for standing quarterly touchpoints",
+      "How Cresta chose out-of-home cities based on where individual buyers, new hires, and investors actually live, not where accounts are headquartered",
+      "Why airport advertising earns outsized spend for internal reasons — the go-to-market team sees it constantly and shares it, counting employee confidence as part of the return",
+      "The $1 / $10 / $100 / $1k task framework Cresta uses to decide what marketing work is worth automating",
+    ],
+    themes: ["Brand", "GTM"],
+    detailTags: [
+      "Case Study Marketing",
+      "Analyst Relations",
+      "Event Marketing",
+      "Out-of-Home Advertising",
+      "Marketing Automation",
+    ],
+    chapters: [
+      { time: "0:00", title: "Intro" },
+      {
+        time: "1:04",
+        title: "Choosing Hypergrowth Companies and Building a CMO Career",
+      },
+      { time: "5:28", title: "Scaling Marketing from $10M to $100M" },
+      {
+        time: "8:40",
+        title: "Creating Credible Case Studies That Drive Growth",
+      },
+      { time: "15:35", title: "Turning Analyst Reports into Pipeline" },
+      {
+        time: "20:28",
+        title: "Building Customer Personas from Conversation Data",
+      },
+      {
+        time: "23:07",
+        title: "Measuring Billboards and Creating Memorable Executive Events",
+      },
+      {
+        time: "30:44",
+        title: "Automating Marketing Without Losing Human Judgment",
+      },
+      { time: "38:22", title: "Final Thoughts" },
+    ],
+    youtubeUrl: "https://youtu.be/LcUZ7zpVFoc",
+    spotifyUrl: "https://go.fame.so/spotify-russell-banzon",
+    appleUrl: "https://go.fame.so/apple-russell-banzon",
+    duration: "46:34",
+    publishedDate: "Aug 11, 2026",
+    faq: [
+      {
+        question:
+          "When should you negotiate case study rights with a customer?",
+        answer:
+          "During the presales process, before the contract is signed — agreeing on target KPIs and getting permission to publish if those KPIs are hit, often in exchange for a discount, since customers are less likely to agree after the fact even when results are strong.",
+      },
+      {
+        question: "How does Cresta make its case study numbers hard to fake?",
+        answer:
+          "By producing a video for every case study with the customer appearing on camera — real, on-camera participation is the hardest thing to fabricate in a category full of unnamed customers and unverifiable numbers.",
+      },
+      {
+        question: "Where should analyst reports be placed in the funnel?",
+        answer:
+          "As a middle-to-bottom-funnel asset, not a top-of-funnel awareness piece — Cresta places its Forrester report in demo-page exit-intent pop-ups and every AE follow-up email, which is what drives repeated mentions in sales call transcripts.",
+      },
+      {
+        question:
+          "How did Cresta choose cities for its out-of-home advertising?",
+        answer:
+          "Based on where individual buyers actually live, down to the city area, not where accounts are headquartered — and weighted toward cities where Cresta is also hiring and where its investors are based.",
+      },
+    ],
+    comingSoon: false,
+    linkedInUrl: "https://www.linkedin.com/in/russellbanzon/",
+    pullQuote:
+      "If you see the physical person on the other side of the screen talking about the incredible work that you're doing together, it's hard to fake that.",
     hosts: [podcastHosts[0], podcastHosts[2]], // Mada Seghete, Ethan Smith
   },
 ];

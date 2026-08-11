@@ -2,7 +2,7 @@ import Footer from "@/components/Footer";
 import { DEFAULT_OG_IMAGE, SITE_URL } from "@/lib/seoConstants";
 import type { Metadata } from "next";
 
-const PRIVACY_TITLE = "Privacy Policy | FOM Podcast";
+const PRIVACY_TITLE = "Privacy Policy | Future of Marketing";
 const PRIVACY_DESC =
   "Privacy policy for the Future of Marketing podcast website by Graphite Growth.";
 

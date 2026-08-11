@@ -127,14 +127,14 @@ const HeroSection = () => {
                 strokeLinejoin="round"
               />
             </motion.svg>
-            <motion.p
+            <motion.h2
               className="text-label translate-y-2"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 2 }}
             >
               Your Hosts
-            </motion.p>
+            </motion.h2>
           </div>
           {/* Logo spans columns 2-3 with animated gradient masked by FOM shape */}
           <div className="md:col-span-2 flex justify-center overflow-hidden relative">
@@ -200,14 +200,14 @@ const HeroSection = () => {
         </motion.div>
 
         {/* Mobile: Your Host label */}
-        <motion.p
+        <motion.h2
           className="text-label mb-4 md:hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 2 }}
         >
           Your Hosts
-        </motion.p>
+        </motion.h2>
 
         {/* Hosts section */}
         <div id="hosts">

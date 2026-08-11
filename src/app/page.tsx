@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import PodcastSection from "@/components/PodcastSection";
 import StickyVerticalText from "@/components/StickyVerticalText";
-import { SITE_DESCRIPTION, SITE_URL } from "@/lib/seoConstants";
+import { SITE_DESCRIPTION, SITE_URL, safeJsonLd } from "@/lib/seoConstants";
 
 const homepageJsonLd = {
   "@context": "https://schema.org",
@@ -37,7 +37,7 @@ export default function Home() {
     <div className="min-h-screen relative overflow-x-hidden">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(homepageJsonLd) }}
       />
 
       <StickyVerticalText />
